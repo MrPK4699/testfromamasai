@@ -1,13 +1,13 @@
 const express = require('express');
-const { route } = require('./routes/route');
+const findUniqCharRoute = require('./routes/findUniqCharRoute');
 const app = express();
 
+app.use(express.json());
 
-app.use('/',route);
+app.use('/', findUniqCharRoute);
 
 const port=5000;
 app.listen(port || 5000, () => {
       console.log('server is running at the port 5000')
 })
-
 
